@@ -29,6 +29,10 @@ var lowerCase = "abcdefghijklmnopqrstuvwxyz".split('');
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
 var numbers = "123456789".split('');
 var specialCharacter = "!@#$%^&*[{}]':;".split('');
+var printedPass = [];
+var allArrays = [].concat(lowerCase, upperCase, numbers, specialCharacter)
+
+
 //method that concats arrays together
 
 var passwordGenerator = function() {
@@ -44,22 +48,45 @@ var passwordGenerator = function() {
     var numbersChoice = window.confirm("Would you like to include numbers in your password?");
     var specialCharacterChoice = window.confirm("Would you like to include special characters in your password");
     if (lowercaseChoice || upperCaseChoice || numbersChoice || specialCharacterChoice) {
+    } else {
+        window.alert("Please include at least one character type");
+        return;
+    }
 // as long as the user picked one of the character types, the password generator will ask how many characters they want
-    
 // the boolean values have been stored and now the user is prompted to declare how many characters their password will be
     var passwordLength = window.prompt("How many characters would you like your password to be? Between 8 and 128 characters");
-     if (passwordLength > 8 && passwordLength < 128) {
-        for (i = 0, i < passwordLength, i++){
-            var actualPassword =
-        
-        }
+     if (passwordLength >= 8 && passwordLength <= 128) {
+        window.passwordValue = passwordLength;
+        generatePassword();
+     }else{
+         window.alert("Password must be between 8 and 128 characters");
+         return;
+     }
+}
+// this part generates the password by saying that we're going to start at 0 and randomly pick indexes from a concated array of all my other arrays 
+// and it's going to continue to pick values 
 
+
+function generatePassword(allArrays) {
+    for(i = 0; i < passwordLength; i++) {
+        var randomPass = Math.floor(Math.random*(passwordLength)) //random number picker 
+        randomPass = allArrays[randomPass] // this says that my new variable is the index number of my allArrays array
+        passwordText.append(randomPass); //this puts my array number 
     }
-    
-       
-      }      
+}
+// function generatePassword(allArrays) {
+//     for(i = 0; i < passwordLength; i++) {
+//         var randomPass = Math.floor(Math.random*(passwordLength)) //random number picker 
+//         randomPass = allArrays[randomPass] // this says that my new variable is the index number of my allArrays array
+//         passwordText.append(randomPass); //this puts my array number 
+//     }
+// }
+//
+var passwordPrint = function() {
+    var password = passwordGenerator();
+    var passwordText = document.getElementById("#actualpassword");
+    passwordText.textContent = password;
 }
 passwordGenerator();
- // else if() { 
-//     var passwordLength = 
- // }
+
+ console.log(typeof passwordLength)
