@@ -49,11 +49,17 @@ var passwordGenerator = function() {
 // the boolean values have been stored and now the user is prompted to declare how many characters their password will be
     var passwordLength = window.prompt("How many characters would you like your password to be? Between 8 and 128 characters");
      if (passwordLength > 8 && passwordLength < 128) {
-        var generatePassword = function()
+        for (i = 0, i < passwordLength, i++){
+            var actualPassword =
+        
+        }
+
     }
     
-        // else if() { 
-        //     var passwordLength = 
-      }      // }
+       
+      }      
 }
 passwordGenerator();
+ // else if() { 
+//     var passwordLength = 
+ // }
