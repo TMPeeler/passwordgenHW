@@ -24,7 +24,7 @@
 //if the user has not selected at least one character type, cancel. But if the user has selected at least one character type, proceed.
 //based on the criteria for the password, run a for loop as many times as there are characters in the password (variable of password length) 
 
-var generatorButton = document.querySelector("#button");
+var generateBtn = document.querySelector("#generate");
 var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var numbers = ["1","2","3","4","5","6","7","8","9"];
@@ -148,7 +148,7 @@ function passwordPrint() {
 passwordGenerator();
 
 
-generatorButton.addEventListener("click", passwordPrint);
+generateBtn.addEventListener("click", passwordPrint);
 
 
 
