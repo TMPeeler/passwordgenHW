@@ -138,7 +138,7 @@ console.log(upperCaseChoice);
 
 
 
-var passwordPrint = function() {
+function passwordPrint() {
     var password = passwordGenerator();
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
